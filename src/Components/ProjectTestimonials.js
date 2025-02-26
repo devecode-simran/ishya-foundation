@@ -30,7 +30,7 @@ const ProjectTestimonials = () => {
         {project.testimonials.data.slice(0, showMore ? project.testimonials.data.length : 3).map((testimonial, index) => (
           <div key={index} className="testimonials-tile">
             <div className="testimonials-header">
-              <img src={testimonial.image} alt={testimonial.name} className="testimonials-image" />
+              <img src={testimonial.image} alt={testimonial.name} className="testimonials-image"loading="lazy" />
               <div className="testimonials-info">
                 <h3 className="testimonials-name">{testimonial.name}</h3>
                 <p className="testimonials-occupation">{testimonial.occupation}</p>

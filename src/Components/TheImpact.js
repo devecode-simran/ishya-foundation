@@ -14,7 +14,7 @@ const TheImpact = ({ heading, subheading, points, image }) => {
         </ul>
       </div>
       <div className="image-container">
-        <img src={image} alt="Impact" />
+        <img src={image} alt="Impact"loading="lazy" />
       </div>
     </div>
   );

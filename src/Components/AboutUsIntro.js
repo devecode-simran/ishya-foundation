@@ -13,12 +13,14 @@ export default function OverlappingImageSection() {
           src={overlap1}
           alt="Main"
           className="main-image"
+          loading="lazy"
         />
         {/* Overlapping Image */}
         <img
           src={overlap2}
           alt="Overlay"
           className="overlay-image"
+          loading="lazy"
         />
       </div>
       <div className="text-container">

@@ -1,9 +1,8 @@
 import React from "react";
-import { FaCalendarAlt, FaClock } from "react-icons/fa"; // Calendar & Clock icons
+import { FaCalendarAlt, FaClock, FaUser } from "react-icons/fa"; // Calendar & Clock icons
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import PageHeader from '../Components/PageHeader';
-
 import "../Styles/Blogs.css"; // Ensure styling is applied
 import Blog1 from "../Images/Blog1.png";
 import Blog2 from "../Images/Blog2.png"
@@ -11,78 +10,91 @@ import Blog3 from "../Images/Blog3.png"
 import Blog4 from "../Images/Blog4.png"
 import Blog5 from "../Images/Blog5.png"
 import Blog6 from "../Images/Blog6.png"
+import Blog7 from "../Images/Blog7.png"
+
 import BlogHero from "../Images/bloghero.png"
+import { Link } from "react-router-dom";
 
 
 // Sample Blog Data
 const blogPosts = [
   {
     id: 1,
-    title: "The Future of AI in Everyday Life",
+    title: "How should students improve their mental health? ",
     writer: "Disha Gupta",
     writerImg: "https://via.placeholder.com/30", // Replace with actual writer image
     date: "Jan 25, 2025",
     readTime: "5 min",
     image: Blog1, // Replace with blog image
-    excerpt: "AI is rapidly transforming how we interact with technology, from smart assistants to self-driving cars...",
-    link: "/blog/ai-future",
+    excerpt: "High school is difficult and a lot of students struggle with mental health issues as a result. In fact, according to the National Alliance on Mental Illness (NAMI), one in five teens are experiencing a mental health condition, worldwide. And these issues can become chronic (meaning they follow you into adulthood); 50% of chronic mental illnesses develop at age 14...",
+    link: "/blog/mental-health",
   },
   {
     id: 2,
-    title: "Understanding the Power of Blockchain",
+    title: "Why is it critical for girls to play sports?",
     writer: "Disha Gupta",
     writerImg: "https://via.placeholder.com/30",
     date: "Feb 2, 2025",
     readTime: "7 min",
     image: Blog2,
-    excerpt: "Blockchain technology is revolutionizing industries, offering transparency, security, and decentralization...",
-    link: "/blog/blockchain-power",
+    excerpt: "Unfortunately, while Indians are progressing towards a positive mindset regarding sports, they hesitate in pursuing it themselves. A shockingly high percentage, 75% of Indians believe that sports is significant in their day-to-day lives according to a research conducted by BBC in 2020...",
+    link: "/blog/girl-sports",
   },
   {
     id: 3,
-    title: "React vs. Vue: Which One to Choose?",
-    writer: "Disha Gupta",
+    title: "Why is Education important?",
+    writer: "Shalini Gupta",
     writerImg: "https://via.placeholder.com/30",
     date: "Feb 10, 2025",
     readTime: "6 min",
     image: Blog3,
-    excerpt: "Both React and Vue.js are powerful front-end frameworks, but each has its unique advantages and use cases...",
-    link: "/blog/react-vs-vue",
+    excerpt: "Education’s importance in society goes much farther than an individual’s capacity to find work or gain a livelihood, It determines the society’s thoughts and ideas as a whole. In a place like India, with one of the highest population in the world, it is important that all of us move ahead instead of just a few...",
+    link: "/blog/importance-of-education",
   },
   {
     id: 4,
-    title: "React vs. Vue: Which One to Choose?",
-    writer: "Disha Gupta",
+    title: "Exercise Right",
+    writer: "Yogita(Student at ISHYA)",
     writerImg: "https://via.placeholder.com/30",
     date: "Feb 10, 2025",
-    readTime: "6 min",
+    readTime: "5 min",
     image: Blog4,
-    excerpt: "Both React and Vue.js are powerful front-end frameworks, but each has its unique advantages and use cases...",
+    excerpt: "Physical activity refers to all movements including during leisure time or for transport to get to and from places, or as part of a person's work. Both moderate and vigorous-intensity physical activity improve health. Physical activity is any form of exercise or movement of the body that uses energy. Some of your daily life activities—doing active chores around the house, yard work, walking the dog—are a few examples...",
     link: "/blog/react-vs-vue",
   },
   {
     id: 5,
-    title: "React vs. Vue: Which One to Choose?",
-    writer: "Disha Gupta",
+    title: " Online vs Offline education",
+    writer: "Muskan Rajput(Student at ISHYA)",
     writerImg: "https://via.placeholder.com/30",
     date: "Feb 10, 2025",
-    readTime: "6 min",
+    readTime: "4 min",
     image: Blog5,
-    excerpt: "Both React and Vue.js are powerful front-end frameworks, but each has its unique advantages and use cases...",
+    excerpt: "The Covid-19 pandemic brought a dynamic shift in the world’s education system. The imposition of lockdown led to shutdown of physical classrooms and therefore online education became the new norm...",
     link: "/blog/react-vs-vue",
   },
   {
     id: 6,
-    title: "React vs. Vue: Which One to Choose?",
-    writer: "Disha Gupta",
+    title: "The Importance of Physical Fitness",
+    writer: "Kamini(Student at ISHYA)",
     writerImg: "https://via.placeholder.com/30",
     date: "Feb 10, 2025",
-    readTime: "6 min",
+    readTime: "2 min",
     image: Blog6,
-    excerpt: "Both React and Vue.js are powerful front-end frameworks, but each has its unique advantages and use cases...",
+    excerpt: "Physical fitness is the key to a healthy body. At the end of the day, your health is your responsibility...",
     link: "/blog/react-vs-vue",
   },
-  
+  {
+    id: 7,
+    title: "The Ripple Effect of Kindness: How One Act Can Inspire Many ",
+    writer: "Kamini(Student at ISHYA)",
+    writerImg: "https://via.placeholder.com/30",
+    date: "Feb 10, 2025",
+    readTime: "8 min",
+    image: Blog7,
+    excerpt: "We all know that kindness is a virtue that should be practiced every day. But did you know that one act of kindness can have a ripple effect that inspires others to do the same? It's true! Whether it's...",
+    link: "/blog/react-vs-vue",
+  },
 ];
 
 const Blogs = () => {
@@ -94,36 +106,32 @@ const Blogs = () => {
         <div className="header-text">
           <h2 className="header-title">PEN IT NOW</h2>
           <div className="header-line"></div>
-          <p className="submit-btn">Submit Here</p> 
+          <p className="submit-btn">
+          <Link to="/submit-blog" >Submit Here</Link>
+        </p>        
         </div>
         <div className="header-image">
           <img src={BlogHero} alt="Header" />
         </div>
       </div>
+
       <div className="blogs-container">
         {blogPosts.map((blog, index) => (
-          <div
-            key={blog.id}
-            className={`blog-item ${index % 2 === 0 ? "left" : "right"}`}
-          >
-            <a href={blog.link} className="blog-image">
-              <img src={blog.image} alt={blog.title} />
-            </a>
+          <div key={blog.id} className={`blog-item ${index % 2 === 0 ? "left" : "right"}`}>
+            <Link to={`/blog/${blog.id}`} className="blog-image">
+              <img src={blog.image} alt={blog.title} loading="lazy"/>
+            </Link>
             <div className="blog-content">
-              <a href={blog.link} className="blog-title">
-                {blog.title}
-              </a>
+              <Link to={`/blog/${blog.id}`} className="blog-title">{blog.title}</Link>
               <div className="blog-meta">
-                <img src={blog.writerImg} alt={blog.writer} className="writer-img" />
-                <span>{blog.writer}</span>
+               <FaUser className="icon" /> 
+               <span>{blog.writer}</span> 
                 <FaCalendarAlt className="icon" />
                 <span>{blog.date}</span>
                 <FaClock className="icon" />
                 <span>{blog.readTime}</span>
               </div>
-              <a href={blog.link} className="blog-excerpt">
-                {blog.excerpt} 
-              </a>
+              <Link to={`/blog/${blog.id}`} className="blog-excerpt">{blog.excerpt}</Link>
             </div>
           </div>
         ))}

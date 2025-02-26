@@ -54,6 +54,7 @@ const Testimonial = () => {
             src={testimonials[currentIndex].image}
             alt={testimonials[currentIndex].name}
             className="testimonial-image"
+            loading="lazy"
           />
           <p className="testimonial-profession">
             {testimonials[currentIndex].profession}

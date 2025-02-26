@@ -3,7 +3,7 @@
     bottom: 20px; /* Adjust vertical position */
     right: 20px; /* Adjust horizontal position */
     background-color: #A6C769; /* WhatsApp green */
-    color: rgb(0, 0, 0);
+    color: white;
     padding: 15px 20px;
     border-radius: 30px; /* Make it round */
     cursor: pointer;
@@ -12,6 +12,7 @@
     display: flex; /* Use flexbox for icon and text */
     align-items: center; /* Vertically align icon and text */
     transition: transform 0.2s ease-in-out; /* Add smooth transition for hover */
+    font-weight: bold;
 }
 
 .floating-whatsapp-button:hover {

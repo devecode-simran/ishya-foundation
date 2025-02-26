@@ -39,13 +39,11 @@
   justify-content: center; /* Center content vertically */
   align-items: flex-start; /* Left align text */
   width: 300px; /* Set width of the green box */
-  height: 280px; /* Set height */
   text-align: left;
   overflow: hidden; /* Prevent text from overflowing */
 }
 
 .address-heading {
-  font-size: 16px;
   margin-bottom: 8px;
   font-weight: bold;
   line-height: 1.2;
@@ -55,7 +53,6 @@
 .address-details {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
 .address-item .sub-heading {

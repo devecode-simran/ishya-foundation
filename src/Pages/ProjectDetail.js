@@ -16,25 +16,22 @@ import ProjectTestimonials from "../Components/ProjectTestimonials";
 const ProjectDetail = () => {
   const { id } = useParams();
   const project = projects.find((proj) => proj.id === parseInt(id));
+  const breadcrumbText = `Home/Our Programs / ${project.pagename || "Project"}`;
 
-  // Activate animations
+  // ✅ Move the hook to the top (before any conditional returns)
   useScrollAnimation();
-
-  if (!project) {
-    return <h2>Project not found!</h2>;
-  }
 
   return (
     <div className="project-page">
       <Navbar />
-      <PageHeader pageName="Contact Us" breadcrumb="Home/Contact Us" />
+            <PageHeader pageName={project.pagename} breadcrumb={breadcrumbText} />
 
       {/* First Component */}
       <div className="hidden">
         <AboutProject
-          image={project.firstComponent.image}
-          heading={project.firstComponent.heading}
-          description={project.firstComponent.description}
+          image={project.firstComponent?.image}
+          heading={project.firstComponent?.heading}
+          description={project.firstComponent?.description}
           buttonText="Get Involved"
         />
       </div>
@@ -42,19 +39,19 @@ const ProjectDetail = () => {
       {/* Second Component: THE NEED */}
       <div className="hidden">
         <TheNeed
-          images={project.theNeed.images}
-          descriptions={project.theNeed.descriptions}
+          images={project.theNeed?.images}
+          descriptions={project.theNeed?.descriptions}
         />
       </div>
 
       {/* Third Component: THE IMPACT */}
       <div className="hidden">
-      <Quotes quote={project.quote} />
+        <Quotes quote={project.quote} />
         <TheImpact
           heading="THE IMPACT"
-          subheading={project.theImpact.subheading}
-          points={project.theImpact.points}
-          image={project.theImpact.image}
+          subheading={project.theImpact?.subheading}
+          points={project.theImpact?.points}
+          image={project.theImpact?.image}
         />
       </div>
 
@@ -64,18 +61,17 @@ const ProjectDetail = () => {
           <ProjectTestimonials
             heading={project.testimonials.heading}
             subheading={project.testimonials.subheading}
-            reviews={project.testimonials.reviews}  // Pass reviews as a prop
+            reviews={project.testimonials.reviews}  
           />
         ) : (
           <div>No testimonials available.</div>
         )}
       </div>
 
-      {/* Join Us Component */}
       <JoinUs
-        heading={project.JoinUs.heading}
-        description={project.JoinUs.description}
-        image={project.JoinUs.image}
+        heading={project.JoinUs?.heading}
+        description={project.JoinUs?.description}
+        image={project.JoinUs?.image}
       />
       
       <Footer />

@@ -32,6 +32,7 @@ const MissionVision = () => {
               src={KidsCircle}
               alt="Placeholder"
               className="square-image"
+              loading="lazy"
             />
           </div>
           <div className="points-tile">

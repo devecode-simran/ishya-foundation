@@ -7,7 +7,7 @@ const JoinUs = ({ heading, description, image}) => {
       <div className="join-us-content">
         {/* Image on the Left */}
         <div className="join-us-image">
-          <img src={image} alt="Join Us" />
+          <img src={image} alt="Join Us" loading="lazy"/>
         </div>
 
         {/* Text on the Right */}

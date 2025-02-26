@@ -135,6 +135,13 @@ h4 {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 1024px) {
+  .footer{
+    background-color: #6D3780;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: 'Montserrat', sans-serif;
+  
+  }
   .footer-container {
     flex-direction: column; /* Stack footer columns vertically */
     padding: 20px; /* Adjust padding for smaller screens */
@@ -182,7 +189,7 @@ h4 {
   .footer-container {
     padding: 10px; /* Adjust padding */
   }
-
+  
   .footer-logo img {
     width: 60px; /* Further reduce logo size */
   }

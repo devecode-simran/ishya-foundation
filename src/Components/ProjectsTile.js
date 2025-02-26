@@ -5,7 +5,7 @@ const ProjectTile = ({redirectPath, image, name, description }) => {
   const navigate = useNavigate()
   return (
     <div className="project-tile">
-      <img src={image} alt={name} className="project-image" />
+      <img src={image} alt={name} className="project-image" loading="lazy"/>
       <h3 className="project-name">{name}</h3>
       <div className="project-description">
         <p>{description}</p>

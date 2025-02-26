@@ -26,14 +26,14 @@ const OurTeamGallery = () => {
         {/* First row - 3 images */}
         <div className="row first-row">
           {images.slice(0, 3).map((src, index) => (
-            <img key={index} src={src} alt={`Team Member ${index + 1}`} className="grid-image large" />
+            <img key={index} src={src} alt={`Team Member ${index + 1}`} className="grid-image large" loading="lazy"/>
           ))}
         </div>
 
         {/* Second row - 4 images */}
         <div className="row second-row">
           {images.slice(3, 7).map((src, index) => (
-            <img key={index + 3} src={src} alt={`Team Member ${index + 4}`} className="grid-image small" />
+            <img key={index + 3} src={src} alt={`Team Member ${index + 4}`} className="grid-image small"loading="lazy" />
           ))}
         </div>
       </div>

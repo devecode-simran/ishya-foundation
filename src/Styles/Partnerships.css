@@ -211,7 +211,7 @@
   .logos-container {
     width: calc(120px + 15px);
     height: 100px;
-    gap: 15px;
+    gap: 50px;
   }
 
   .logo-item {

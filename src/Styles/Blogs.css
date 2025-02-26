@@ -4,7 +4,6 @@
     padding: 0 20px;
     display: flex;
     flex-direction: column;
-    gap: 50px;
 }
 
 .blog-item {
@@ -110,9 +109,8 @@
 .blogs-header {
     display: flex;
     align-items: center;
-    max-width: 80%;
     gap:100px;
-    margin-left: 250px;
+    justify-content: center;
     margin-top: 20px;
   }
   
@@ -134,8 +132,7 @@
     margin-bottom: 10px;
   }
   
-  .submit-btn {
-   
+  .submit-btn :link{
     color:orange;
     border: none;
     cursor: pointer;
@@ -172,7 +169,7 @@
         margin: 0 auto 10px auto;
     }
 
-    .submit-btn {
+    .submit-btn :link{
         font-size: 14px;
         text-align: center;
         display: block;

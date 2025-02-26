@@ -6,8 +6,7 @@
   justify-content: center; /* Center-align content horizontally */
   gap: 20px; /* Spacing between the image and the text */
   padding: 20px; /* Add padding around the component */
-  width: 100%; /* Full width */
-  max-width: 1200px; /* Restrict max width for larger screens */
+  max-width: auto ; /* Restrict max width for larger screens */
   margin: 20px auto; /* Center the component on the page */
 }
 
@@ -19,7 +18,7 @@
 }
 
 .first-component .content {
-  width: 50%; /* Text content takes up 50% of the space */
+  width: 35%; /* Text content takes up 50% of the space */
   text-align: left; /* Align text to the left */
 }
 

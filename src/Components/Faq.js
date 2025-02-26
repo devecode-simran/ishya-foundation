@@ -25,7 +25,7 @@ const FAQComponent = () => {
         <h3 className="faq-subheading">Have any Question?</h3>
         <h1 className="faq-mainheading">Make a difference in the life of a child</h1>
         <div className="faq-greenbox">
-          <img src={FAQ} alt="FAQ Illustration" className="faq-image" />
+          <img src={FAQ}loading="lazy" alt="FAQ Illustration" className="faq-image" />
         </div>
       </div>
 

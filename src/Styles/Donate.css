@@ -59,17 +59,32 @@
 .donate-btn {
     background-color: #A6C769; /* Green background */
     color: white;
-    padding: 10px 20px;
-    font-size: 18px;
+    padding: 8px 10px;
+    font-size: 14px;
     cursor: pointer;
     border: none;
-    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 250px;
-    margin-top: 20px;
+    width: 200px;
+    margin: 20px;
+    margin-left: 0%;
+    
   }
+  .donate-now-btn {
+    background-color: #6D3780;
+    color: white;
+    padding: 10px 20px; /* Increased padding */
+    font-size: 18px; /* Bigger text */
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.donate-now-btn:hover {
+    background-color: #5a2d68;
+}
   
   .donate-btn:hover {
     background-color: #A6C780; /* Darker green on hover */
@@ -288,9 +303,12 @@
     width: 100%;
   }
   .quote-overlay p {
-     /* Adjust line spacing for better readability */
     padding: 10px;
     box-sizing: border-box;
     font-weight: bold;
+    font-size: 10px;
+    width: 200px;
   }
 }
+/* Make the Dropdown Smaller */
+

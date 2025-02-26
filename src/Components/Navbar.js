@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../Styles/Navbar.css';
 import Logo from '../Images/IshyaLogo.png';
-import { FaSearch, FaGlobe, FaHandsHelping, FaBars, FaTimes } from 'react-icons/fa';
+import { FaSearch, FaHandsHelping, FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -23,17 +23,17 @@ const Navbar = () => {
   const navItems = [
     {
       label: 'About Us',
-      link: '/aboutus',
+      link: '/about-us/who-are-we',
       menu: ['Who are we', 'Finances & Reporting'],
     },
     {
       label: 'Our Programs',
       link: '/ourprograms',
-      menu: ['Education', 'Health & Wellbeing', 'Community Development', 'Women Empowerment', 'Environment', 'Art & Culture'],
+      menu: ['All','Education', 'Health & Wellbeing', 'Community Development', 'Women Empowerment', 'Environment', 'Art & Culture'],
     },
     {
       label: 'Media & Coverage',
-      link: '/media-coverage',
+      link: '/media-&-coverage',
       menu: ['Gallery', 'Blog', 'News', 'Newsletter'],
     },
     {
@@ -55,7 +55,7 @@ const Navbar = () => {
           </ul>
           <ul className="navbar-right">
             <li>
-              <Link to="/getinvolved">Partnerships</Link>
+              <Link to="/partnerships">Partnerships</Link>
             </li>
             <li>
               <Link to="/subscribe">Subscribe to our Newsletter</Link>
@@ -66,7 +66,7 @@ const Navbar = () => {
           <div className="mobile-logo-menu">
             { !isMobileMenuOpen &&
             <Link to="/">
-              <img src={Logo} alt="Logo" className="logo" style={{ width: '60px' }} />
+              <img src={Logo} alt="Logo" className="logo" style={{ width: '70px' }} />
             </Link>
             }
             <button 
@@ -82,7 +82,7 @@ const Navbar = () => {
             {  
               <li className="desktop-logo">
               <Link to="/">
-                <img src={Logo} alt="Logo" className="logo" style={{ width: '60px' }} />
+                <img src={Logo} alt="Logo" className="logo" style={{ width: '70px' }} />
               </Link>
             </li>
             }
@@ -110,10 +110,7 @@ const Navbar = () => {
                 )}
               </li>
             ))}
-            <li className="navbar-lang">
-              <FaGlobe />
-              <span>EN</span>
-            </li>
+            
             <li className="navbar-support">
               <Link to="/donate" onClick={() => setIsMobileMenuOpen(false)}>
                 <button className="support-btn">
@@ -122,9 +119,7 @@ const Navbar = () => {
                 </button>
               </Link>
             </li>
-            <li className="navbar-search">
-              <FaSearch />
-            </li>
+            
           </ul>
         </div>
       </nav>

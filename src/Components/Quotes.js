@@ -14,6 +14,7 @@ const Quotes = ({ quote }) => {
         src={QDL} // Static top-left image
         alt="Top Left Decoration"
         className="quote-image top-left"
+        loading="lazy"
       />
       <div className="quote-text">
         {quoteLines.map((line, index) => (
@@ -24,6 +25,7 @@ const Quotes = ({ quote }) => {
         src={QDR} // Static bottom-right image
         alt="Bottom Right Decoration"
         className="quote-image bottom-right"
+        loading="lazy"
       />
     </div>
   );

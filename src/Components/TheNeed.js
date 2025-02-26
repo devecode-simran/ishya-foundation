@@ -8,7 +8,7 @@ const TheNeed = ({ images, descriptions }) => {
       <div className="image-grid">
         {images.map((image, index) => (
           <div key={index} className="image-item">
-            <img src={image} alt={`Need ${index + 1}`} />
+            <img src={image} loading="lazy"alt={`Need ${index + 1}`} />
             <p>{descriptions[index]}</p>
             {/* <button style={{ backgroundColor: "#6D3780", color: "#FFF" }}>
               Get Involved

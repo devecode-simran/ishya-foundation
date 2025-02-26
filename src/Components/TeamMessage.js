@@ -7,11 +7,11 @@ import FloralDesign2 from "../Images/FloralDesign2.png"; // Provide the PNG
 const ProfileSection = () => {
   return (
     <div className="profile-section">
-      <img src={FloralDesign1} alt="Background Design" className="background-design" />
+      <img src={FloralDesign1} alt="Background Design" className="background-design" loading="lazy"/>
       
       <div className="profile-content">
         <div className="profile-image-wrapper">
-          <img src={ProfileImage} alt="Profile" className="profile-image" />
+          <img src={ProfileImage} alt="Profile" className="profile-image" loading="lazy"/>
         </div>
         <div className="profile-text">
           <p className="profile-description">
@@ -22,7 +22,7 @@ const ProfileSection = () => {
         </div>
       </div>
 
-      <img src={FloralDesign2} alt="Corner Design" className="corner-design" />
+      <img src={FloralDesign2} alt="Corner Design" className="corner-design" loading="lazy"/>
     </div>
   );
 };

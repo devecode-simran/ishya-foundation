@@ -38,7 +38,7 @@ const Partnerships = ({ logos }) => {
         <div className="logos-container">
           {displayedLogos.map((logo, index) => (
             <div key={index} className="logo-item">
-              <img src={logo} alt={`Partner ${startIndex + index + 1}`} />
+              <img src={logo} loading="lazy" alt={`Partner ${startIndex + index + 1}`} />
             </div>
           ))}
         </div>

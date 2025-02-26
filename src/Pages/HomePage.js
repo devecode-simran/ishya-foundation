@@ -31,6 +31,8 @@ import AreasCoveredComponent from '../Components/AreasCovered';
 import FloatingWhatsAppButton from '../Components/FloatingWhatsappButton';
 import ZigZagSection from '../Components/ZigZagSection';
 import Beneficiaries from '../Components/Beneficiaries';
+import { Link } from 'react-router-dom';
+
 const partners = [
   projectBala,
   qrg,
@@ -60,7 +62,9 @@ const HomePage = () => {
       <div className="hero-section">
         <div className="hero-background"></div>
         <div className="join-us-button">
+        <Link to="/joinus">
         <button>Join Us</button>
+        </Link>
         </div>
       </div>
       <FloatingWhatsAppButton phoneNumber="+918527690615" message="Hello! I need some help." /> {/* Use the component */}

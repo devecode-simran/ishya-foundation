@@ -48,6 +48,7 @@ import Swasthya6 from '../Images/ProjectDetails/Swasthya (7).jpg';
 const projects = [
     {
       id: 2,
+      pagename: "Shiksha Se Saksham",
       firstComponent: {
         image: Shiksha,
         heading: "Empowering Underprivileged Children in Chhalera Community",
@@ -85,6 +86,7 @@ const projects = [
     },
     {
       id: 1,
+      pagename: "Udaan",
       firstComponent: {
         image: UdaanProject,
         heading: "Empowering Out-of-School Children",
@@ -153,6 +155,7 @@ const projects = [
     },
     {
       id: 3,
+      pagename: "Saurvi",
       firstComponent: {
         image: Saurvi3,
         heading: "Empowering Care Leavers in Delhi with Skills and Support",
@@ -191,6 +194,7 @@ const projects = [
     },
     {
       id: 4,
+      pagename: "Sarvodaya",
       firstComponent: {
         image: Sarvodaya1,
         heading: "Sarvodaya - Universal Upliftment",
@@ -230,6 +234,7 @@ const projects = [
     },
     {
       id: 5,
+      pagename: "Unnati",
       firstComponent: {
         image: Unnati,
         heading: "Project Unnati - Hobby Classes",
@@ -269,6 +274,7 @@ const projects = [
 
     {
       id: 6,
+      pagename: "Saarthi",
       firstComponent: {
         image: Shiksha,
         heading: "Project Saarthi - Career Counselling",
@@ -309,6 +315,7 @@ const projects = [
 
     {
       id: 7,
+      pagename: "Sahayak",
       firstComponent: {
         image: Sahayak2,
         heading: "Project Sahayak-Aid for Higher Education",
@@ -349,6 +356,7 @@ const projects = [
 
     {
       id: 8,
+      pagename: "Swasthya",
       firstComponent: {
         image: Swasthya1,
         heading: "Project Swasthya: Promoting Health and Wellness in the Community",
@@ -428,6 +436,7 @@ const projects = [
 
     {
       id: 10,
+      pagename: "Kushal Sakhi",
       firstComponent: {
         image: KushalSakhi1,
         heading: "Kushal Sakhi: Empowering Women Through Handmade Crafts",

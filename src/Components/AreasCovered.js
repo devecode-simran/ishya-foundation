@@ -12,6 +12,7 @@ const AreasCoveredComponent = () => {
             src={indiaMap} // Replace with actual image URL
             alt="Indian Map"
             className="india-map-image"
+            loading="lazy"
           />
         </div>
         {/* Right Text Section */}

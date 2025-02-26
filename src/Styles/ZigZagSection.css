@@ -5,25 +5,29 @@
     flex-direction: column;
     overflow: hidden; /* Prevents scrolling issues */
     font-weight: bold;
-
+    justify-content: center;
 }
 
 /* Individual Sections */
 .zigzag-section {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 150px;
     position: relative;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Reverse Layout for Middle Section */
 .zigzag-section.reverse {
+    align-items: center;
+    justify-content: center;
 }
 
 /* Image Styles */
 .zigzag-image {
     flex: 1;
-    max-width: 40%;
+    max-width: 30%;
     position: relative;
 }
 
@@ -35,21 +39,16 @@
 }
 
 /* First and Third Image (Right Aligned & Cut Off Slightly) */
-.zigzag-image.right img {
-    transform: translateX(60%);
+.zigzag-image.rightt img {
 }
 
 /* Second Image (Left Aligned & Cut Off Slightly) ✅ FIXED */
 .zigzag-section.reverse .zigzag-image img {
-    transform: translateX(-10%);
 }
 
 /* Text Section */
 .zigzag-text {
-    flex: 1;
     padding: 20px;
-    padding-left: 200PX;
-    max-width: 500px;
 }
 
 /* Heading */
@@ -67,6 +66,7 @@
 }
 
 .zigzag-text li {
+    text-decoration: none;
     font-size: 30px;
     color: #666;
     display: flex;

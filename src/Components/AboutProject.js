@@ -5,7 +5,7 @@ const AboutProject = ({ image, heading, description, buttonText }) => {
   return (
     <div className="first-component">
       <div className="image-container-aboutproject">
-        <img src={image} alt={heading} />
+        <img src={image} alt={heading} loading="lazy"/>
       </div>
       <div className="content">
         <h1 style={{ color: "#A6C769", fontFamily: "Playfair Display" }}>{heading}</h1>

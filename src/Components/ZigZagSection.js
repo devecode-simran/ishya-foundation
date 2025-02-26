@@ -18,15 +18,14 @@ const ZigZagSection = () => {
             <li><span className="circle orange"></span> Women Empowerment </li>
           </ul>
         </div>
-        <div className="zigzag-image right">
-          <img src={Image1} alt="First Image" />
+        <div className="zigzag-image rightt">
+          <img src={Image1} alt="Students studying" loading="lazy"/>
         </div>
       </div>
 
-      {/* Second Section - Image Left, Text Right ✅ (Now Correctly Positioned) */}
       <div className="zigzag-section reverse">
-        <div className="zigzag-image left">
-          <img src={Image2} alt="Second Image" />
+        <div className="zigzag-image leftt">
+          <img src={Image2} alt="Women empowerment" loading="lazy" />
         </div>
         <div className="zigzag-text">
           <ul>
@@ -45,8 +44,8 @@ const ZigZagSection = () => {
             <li><span className="circle blue"></span> Partnerships</li>
           </ul>
         </div>
-        <div className="zigzag-image right">
-          <img src={Image3} alt="Third Image" />
+        <div className="zigzag-image rightt">
+          <img src={Image3} alt="Childen celebrating holi" loading="lazy" />
         </div>
       </div>
     </div>

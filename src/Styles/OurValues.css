@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: flex-start; /* Align items to the start (top) */
   gap: 1rem;
-  padding: 7rem;
+  padding: 30px;
   flex-direction: column;
 }
 .our-values-heading{

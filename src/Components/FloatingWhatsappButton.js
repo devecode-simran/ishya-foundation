@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../Styles//FloatingWhatsappButton.css'; // Import your CSS file
 
 const FloatingWhatsAppButton = ({ phoneNumber, message }) => {
-    const [isVisible, setIsVisible] = useState(true); // State for visibility (you can remove this if you want it always visible)
 
     const handleWhatsAppClick = () => {
         const encodedMessage = encodeURIComponent(message);
