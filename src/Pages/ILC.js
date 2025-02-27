@@ -9,6 +9,10 @@ import RepublicDay from "../Images/RepublicDay.jpg";
 import SummerCamp from "../Images/SummerCamp.jpg";
 import DiwaliCelebration from "../Images/DiwaliCelebration.jpg";
 import BaisakhiCelebration from "../Images/BaisakhiCelebration.jpg";
+import HoliCelebration from "../Images/DiwaliCelebration.jpg";
+import BirthdayCelebration from "../Images/BirthdayCelebration.jpg";
+import LohriCelebration from "../Images/LohriCelebration.jpg";
+import WorldEarthDay from "../Images/WorldEarthDay.jpg";
 
 import PageHeader from "../Components/PageHeader";
 
@@ -100,7 +104,69 @@ const ILC = () => {
           <img src={SummerCamp} alt="Summer Camp 2023" loading="lazy" />
         </div>
       </section>
-      
+      {/* Holi Celebration */}
+      <section className="ilc-section holi-celebration">
+        <div className="ilc-image">
+          <img src={HoliCelebration} alt="Holi Celebration" loading="lazy" />
+        </div>
+        <div className="ilc-content">
+          <h2>Holi Celebration</h2>
+          <p>
+            The festival of colors was celebrated with enthusiasm at Ishya
+            Learning Center. Children enjoyed playing with organic colors,
+            dancing, and sharing sweets. The event encouraged unity, joy, and
+            cultural harmony among the students and the community.
+          </p>
+        </div>
+      </section>
+
+      {/* Lohri Celebration */}
+      <section className="ilc-section lohri-celebration">
+        <div className="ilc-content">
+          <h2>Lohri Celebration</h2>
+          <p>
+            The warmth of Lohri was felt at Ishya Foundation as children and
+            families gathered around the bonfire, sang folk songs, and enjoyed
+            traditional treats like rewari and peanuts. The festival symbolized
+            the triumph of light over darkness and the spirit of togetherness.
+          </p>
+        </div>
+        <div className="ilc-image">
+          <img src={LohriCelebration} alt="Lohri Celebration" loading="lazy" />
+        </div>
+      </section>
+
+      {/* World Earth Day Celebration */}
+      <section className="ilc-section earthday-celebration">
+        <div className="ilc-image">
+          <img src={WorldEarthDay} alt="World Earth Day Celebration" loading="lazy" />
+        </div>
+        <div className="ilc-content">
+          <h2>World Earth Day Celebration</h2>
+          <p>
+            On Earth Day, Ishya Foundation organized an awareness campaign where
+            children planted saplings and learned about the importance of
+            environmental conservation. The event emphasized sustainable
+            practices like reducing waste and protecting natural resources.
+          </p>
+        </div>
+      </section>
+
+      {/* Birthday Celebration */}
+      <section className="ilc-section birthday-celebration">
+        <div className="ilc-content">
+          <h2>Birthday Celebration</h2>
+          <p>
+            A special initiative at Ishya Learning Center ensures that every
+            child’s birthday is celebrated with love and joy. Cake-cutting,
+            games, and personalized gifts make their day extra special,
+            bringing smiles to their faces and creating cherished memories.
+          </p>
+        </div>
+        <div className="ilc-image">
+          <img src={BirthdayCelebration} alt="Birthday Celebration" loading="lazy" />
+        </div>
+      </section>
       <Footer />
     </div>
   );
