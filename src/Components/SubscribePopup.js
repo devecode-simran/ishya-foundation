@@ -8,11 +8,16 @@ const SubscribePopup = () => {
   const [isSubscribed, setIsSubscribed] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-    }, 10000);
+    const hasSeenPopup = localStorage.getItem("hasSeenPopup");
 
-    return () => clearTimeout(timer);
+    if (!hasSeenPopup) {
+      const timer = setTimeout(() => {
+        setShowPopup(true);
+        localStorage.setItem("hasSeenPopup", "true");
+      }, 10000);
+
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   const handleClose = () => {
@@ -59,6 +64,7 @@ const SubscribePopup = () => {
       setMessage('Error connecting to server. Try again later.');
     }
   };
+
   if (!showPopup) return null;
 
   return (

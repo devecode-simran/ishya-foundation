@@ -1,23 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; 
+import { useLocation } from 'react-router-dom';
 import '../Styles/Partnerships.css';
 
-const Partnerships = ({ logos }) => {
+const Partnerships = ({ logos, logoLinks }) => {
   const [startIndex, setStartIndex] = useState(0);
   const visibleLogos = 5; // Number of logos visible at a time
+  const location = useLocation(); // Get current page location
 
   const handlePrev = () => {
-    setStartIndex((prevIndex) =>
-      prevIndex - 1 < 0 ? 0 : prevIndex - 1
-    ); // Move back by one logo
+    setStartIndex((prevIndex) => (prevIndex - 1 < 0 ? 0 : prevIndex - 1));
   };
 
   const handleNext = () => {
     setStartIndex((prevIndex) =>
-      prevIndex + 1 + visibleLogos > logos.length
-        ? prevIndex
-        : prevIndex + 1
-    ); // Move forward by one logo
+      prevIndex + 1 + visibleLogos > logos.length ? prevIndex : prevIndex + 1
+    );
   };
+
+  const handleLogoClick = (index) => {
+    if (!logoLinks || index < 0 || index >= logoLinks.length) {
+      console.error("Invalid index:", index); // Debugging message
+      return;
+    }
+  
+    const sectionId = logoLinks[index]; // Ensure this is not undefined
+  
+    if (!sectionId) return; // Prevent errors if no matching section exists
+  
+    const section = document.getElementById(sectionId);
+  
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.href = `/partnerships#${sectionId}`; // Redirect if section isn't found
+    }
+  };
+  
 
   const displayedLogos = logos.slice(startIndex, startIndex + visibleLogos);
 
@@ -37,7 +55,12 @@ const Partnerships = ({ logos }) => {
         </button>
         <div className="logos-container">
           {displayedLogos.map((logo, index) => (
-            <div key={index} className="logo-item">
+            <div 
+              key={index} 
+              className="logo-item" 
+              onClick={() => handleLogoClick(logoLinks[startIndex + index])} 
+              style={{ cursor: "pointer" }}
+            >
               <img src={logo} loading="lazy" alt={`Partner ${startIndex + index + 1}`} />
             </div>
           ))}

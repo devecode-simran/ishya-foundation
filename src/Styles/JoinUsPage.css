@@ -9,6 +9,10 @@
     padding: 50px 20px;
     margin-top: 60px;
   }
+  .submit-button.dark-green {
+    background-color: darkgreen !important;
+    color: white;
+  }
   
   /* Translucent Background Overlay */
   .background-overlay {

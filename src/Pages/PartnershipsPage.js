@@ -23,17 +23,15 @@ import salaamBaalakTrust from '../Images/PartnersLogo/SalaamBaalakTrust.png';
 import marengoAsiaHospital from '../Images/PartnersLogo/MarengoAsiaHospital.png';
 import ministryofHAFW from '../Images/PartnersLogo/MinistryofHAFW.png';
 import KasturbaGandhiBalikaVidyalaya from '../Images/PartnersLogo/KasturbaGandhiBalikaVidyalaya.png';
-import Partner1 from '../Images/Partner (1).png';
 import Partner2 from '../Images/Partner (2).png';
 import Partner3 from '../Images/Partner (3).png';
 import MentalWell from '../Images/MentalWell.jpg';
 import Menstrual from '../Images/MenstrualHygiene.jpg';
 import HealthCamp from '../Images/HealthCamp.jpg';
-
 import Partnerships from '../Components/Partnerships';
 import Quotes from '../Components/Quotes';
 import PartnerWithUs from '../Components/PartnerWithUs';
-const partners = [
+const partnershipsPageLogos = [
     projectBala,
     qrg,
     yuno,
@@ -54,6 +52,12 @@ const partners = [
     katha,
     giveIndia
     
+  ];
+  
+  const partnershipsPageLogoLinks = [
+    "2", // Will scroll to #social-protection
+    "3",    // Will scroll to #women-training
+    "4"   // Will scroll to #mental-wellbeing
   ];
 const PartnershipsPage = () => {
     const partnersData = [
@@ -131,8 +135,8 @@ const PartnershipsPage = () => {
       quote= "No act of kindness, no matter how small, is ever wasted. - Aesop"
       />
       <PartnerWithUs/>
-      <Partnerships logos={partners} />
-        <Footer />
+      <Partnerships logos={partnershipsPageLogos} logoLinks={partnershipsPageLogoLinks} />;
+      <Footer />
       </div>
     );
   };

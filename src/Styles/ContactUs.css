@@ -27,6 +27,25 @@
   height: auto;
   
 }
+/* Zoom-in effect on hover */
+.zoom-hover {
+  transition: transform 0.3s ease-in-out;
+}
+
+.zoom-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Styling clickable links */
+.address-details a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.address-details a:hover {
+  text-decoration: underline;
+}
+
 
 /* Address Section */
 .address-section {

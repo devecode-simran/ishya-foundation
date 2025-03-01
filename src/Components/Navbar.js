@@ -24,7 +24,7 @@ const Navbar = () => {
     {
       label: 'About Us',
       link: '/about-us/who-are-we',
-      menu: ['Who are we', 'Finances & Reporting'],
+      menu: ['Who are we', 'Finances & Reporting','Ishya Learning Centre'],
     },
     {
       label: 'Our Programs',

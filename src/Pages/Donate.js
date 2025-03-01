@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import '../Styles/Donate.css';
-import { FaCaretDown } from 'react-icons/fa'; // Importing the down arrow icon
+import { FaCaretDown } from 'react-icons/fa';
 import DonateImage from '../Images/Donate.png';
 import DonateQuote from '../Images/DonateQuote.png';
 import PageHeader from '../Components/PageHeader';
+import { useNavigate } from 'react-router-dom';
 
 const donationOptions = {
   "Send a Child to School": "https://rzp.io/rzp/donateforschool",
@@ -16,24 +17,24 @@ const donationOptions = {
 
 const Donate = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [selectedDonation, setSelectedDonation] = useState(""); // Store selected donation purpose
+  const [selectedDonation, setSelectedDonation] = useState(""); 
+  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setIsDropdownOpen(prevState => !prevState);
   };
 
-  // Handle donation selection
   const handleDonationSelect = (option) => {
     setSelectedDonation(option);
-    setIsDropdownOpen(false); // Close dropdown after selecting
+    setIsDropdownOpen(false);
   };
 
-  // Handle Donate Now Button Click
   const handleDonateNow = () => {
     if (selectedDonation && donationOptions[selectedDonation]) {
-      window.location.href = donationOptions[selectedDonation]; // Redirect to the correct Razorpay link
+      window.location.href = donationOptions[selectedDonation];
     } else {
-      alert("Please select a donation purpose before proceeding.");
+      // Redirect to Razorpay donation form if no option is selected
+      window.location.href = "https://checkout.razorpay.com/v1/payment-button.js?data-payment_button_id=pl_Jf00iQhKxnVCGj";
     }
   };
 
@@ -42,20 +43,15 @@ const Donate = () => {
       <Navbar />
       <PageHeader pageName="Donate Now" breadcrumb="Home/Donate" />
       <div className="donate-container">
-        {/* "Every penny matters" text */}
         <div className="donate-header">
-          <h1>
-            EVERY <span className="green-text">PENNY</span> MATTERS
-          </h1>
+          <h1>EVERY <span className="green-text">PENNY</span> MATTERS</h1>
         </div>
         
-        {/* Sub-heading and Main Heading */}
         <div className="donate-subheading">
           <h2>SUPPORT US</h2>
           <h3>JOIN HANDS WITH US TO CREATE A BETTER FUTURE FOR OUR SOCIETY</h3>
         </div>
 
-        {/* Information Box */}
         <div className="donate-info-box">
         <p>
         Economic constraints control the lives of everyone within our society, especially the underprivileged communities.
@@ -87,10 +83,9 @@ const Donate = () => {
           <p>IFSC – YESB0000003</p>
         </div>
         
-        {/* Donation Options Button with Dropdown */}
-          <div className="donate-dropdown">
+        <div className="donate-dropdown">
           <button onClick={toggleDropdown} className="donate-btn">
-            {selectedDonation || "Choose How to Help"}  {/* Show selected option */}
+            {selectedDonation || "Choose How to Help"}
             <FaCaretDown className="dropdown-arrow" />
           </button>
           {isDropdownOpen && (
@@ -106,9 +101,8 @@ const Donate = () => {
               ))}
             </div>
           )}
-          </div>
+        </div>
 
-        {/* Donate Now Button */}
         <div className="donate-now-container">
           <button className="donate-now-btn" onClick={handleDonateNow}>
             Donate Now
@@ -121,7 +115,13 @@ const Donate = () => {
           <p>PAN: AACAI1185K | 80G NUMBER: AACAI1185KF2022401</p>
         </div>
 
-        {/* Right-side Image Below the Button */}
+        {/* Button to view donation receipt */}
+        <div className="donation-receipt-container">
+          <button className="receipt-btn" onClick={() => navigate('/atg-details')}>
+            View ATG Details
+          </button>
+        </div>
+
         <div className="right-image-container">
           <div className="right-image">
             <img src={DonateQuote} alt="Quote Overlay" />
@@ -131,11 +131,9 @@ const Donate = () => {
           </div>
         </div>
 
-        {/* Big Centered Image */}
         <div className="center-image">
           <img src={DonateImage} alt='Children in Summer camp' loading="lazy"/>
         </div>
-
       </div>
       
       <Footer />

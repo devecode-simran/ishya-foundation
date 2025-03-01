@@ -18,7 +18,15 @@
     margin-bottom: 30px;
     max-width: 800px;
 }
-
+.partner-us-tile {
+    text-decoration: none; /* Remove default link styling */
+    color: inherit; /* Ensures text color remains unchanged */
+    display: block; /* Makes the entire tile clickable */
+    cursor: pointer; /* Indicates it's clickable */
+  }
+  .partner-us-tile:hover {
+    transform: scale(1.05); /* Zoom-in effect on hover */
+  }  
 /* Tiles container */
 .partner-us-tiles {
     display: flex;

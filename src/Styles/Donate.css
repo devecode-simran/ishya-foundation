@@ -311,4 +311,21 @@
   }
 }
 /* Make the Dropdown Smaller */
+.donation-receipt-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.receipt-btn {
+  padding: 7px 15px;
+  background-color: #A6C769;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background 0.3s;
+  border: none;
+}
 
+.receipt-btn:hover {
+  background-color: #6D3780;
+}

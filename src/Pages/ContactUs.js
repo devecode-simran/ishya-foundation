@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import {React, useState} from "react";
 import axios from "axios";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
@@ -19,20 +19,45 @@ const ContactUs = () => {
   });
 
   const [responseMessage, setResponseMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   // Handle Input Change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Validate name and phone number
+  const validateForm = () => {
+    const nameRegex = /^[A-Za-z]+$/;
+    const phoneRegex = /^[0-9]{10}$/;
+
+    if (!nameRegex.test(formData.first_name) || !nameRegex.test(formData.last_name)) {
+      setErrorMessage("Name cannot contain numbers.");
+      return false;
+    }
+    if (!phoneRegex.test(formData.phone_number)) {
+      setErrorMessage("Phone number must be exactly 10 digits.");
+      return false;
+    }
+    setErrorMessage(""); // Clear error if everything is fine
+    return true;
+  };
+
   // Handle Form Submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!validateForm()) return;
 
     try {
       const response = await axios.post("http://localhost:3001/contact", formData);
       setResponseMessage(response.data.message);
       setFormData({ first_name: "", last_name: "", email: "", phone_number: "", message: "" });
+
+      // Hide message after 10 seconds
+      setTimeout(() => {
+        setResponseMessage("");
+      }, 5000);
     } catch (error) {
       setResponseMessage("Error submitting the form. Please try again.");
     }
@@ -41,7 +66,7 @@ const ContactUs = () => {
   return (
     <div>
       <Navbar />
-      <PageHeader pageName="Contact Us" breadcrumb="Home/Contact Us" />
+      <PageHeader pageName="Contact Us" breadcrumb="Home / Contact Us" />
 
       <div className="contact-us-head">
         <h1>We'd Love to Hear From You</h1>
@@ -49,17 +74,33 @@ const ContactUs = () => {
 
       <div className="contact-container">
         <div className="location-section">
-          <img src={Map} alt="Map Location" className="location-image" />
+          {/* Clickable Map Image with Zoom-in Effect */}
+          <a href="https://maps.app.goo.gl/rEFsj8ygSYjvvdCc9" target="_blank" rel="noopener noreferrer">
+            <img src={Map} alt="Map Location" className="location-image zoom-hover" />
+          </a>
         </div>
 
         <div className="address-section">
           <h3 className="address-heading">Address</h3>
           <div className="address-details">
             <p>Ishya Foundation: 78, A-1 Ln, Block B, Friends Colony East, New Delhi, Delhi-110065</p>
-            <h3 className="sub-heading">Whatsapp:</h3>
-            <p>+91 8527690615</p>
+            <p>2b, Gali Number 1, Chhalera, Chhalera Bangar, Sector 44, Noida, Uttar Pradesh 201303</p>
+
+            {/* Clickable WhatsApp Number */}
+            <h3 className="sub-heading">WhatsApp:</h3>
+            <p>
+              <a href="https://wa.me/919876543210" className="zoom-hover" target="_blank" rel="noopener noreferrer">
+                +91 8527690615
+              </a>
+            </p>
+
+            {/* Clickable Email */}
             <h3 className="sub-heading">Email:</h3>
-            <p>contact_us@ishya.co.in</p>
+            <p>
+              <a href="mailto:contact_us@ishya.co.in" className="zoom-hover">
+                contact_us@ishya.co.in
+              </a>
+            </p>
           </div>
         </div>
       </div>
@@ -67,7 +108,7 @@ const ContactUs = () => {
       <div className="form-container">
         <div className="form-content">
           <h3 className="form-subheading">Get in Touch</h3>
-          <h2 className="form-heading">Send Us a message</h2>
+          <h2 className="form-heading">Send Us a Message</h2>
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="input-group">
@@ -99,11 +140,15 @@ const ContactUs = () => {
             <button type="submit" className="send-button">Send Message</button>
           </form>
 
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
           {responseMessage && <p className="response-message">{responseMessage}</p>}
         </div>
 
         <div className="form-image-section">
-          <img src={IshyaEntrance} alt="Form Decoration" className="form-image" />
+          {/* Clickable Image with Zoom-in Effect */}
+          <a href="https://goo.gl/maps/your-location" target="_blank" rel="noopener noreferrer">
+            <img src={IshyaEntrance} alt="Form Decoration" className="form-image zoom-hover" />
+          </a>
         </div>
       </div>
 

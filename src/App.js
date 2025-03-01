@@ -20,6 +20,7 @@ import PrivacyPolicy from './Pages/PrivacyPolicy';
 import SubscribePopup from './Components/SubscribePopup';
 import ILC from './Pages/ILC';
 import SubmitBlog from './Pages/SubmitBlog';
+import ATGDetails from './Pages/ATGDetails';
 const App = () => {
   return (
     <Router>
@@ -47,11 +48,11 @@ const App = () => {
         <Route path="/our-programs/all" element={<ProjectsPage />} />
         <Route path="/ishya-learning-centre" element={<ILC />} />
         <Route path="/submit-blog" element={<SubmitBlog />} />
-
+        <Route path="/about-us/ishya-learning-centre" element={<ILC />} />
+        <Route path="/ATG-details" element={<ATGDetails />} />
 
       </Routes>
       <SubscribePopup/> {/* Place the component here */}
-
     </Router>
   );
 };

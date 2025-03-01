@@ -8,13 +8,14 @@ const Partner = ({ heading, imageSrc, subheading, description }) => {
       <h1 className="partner-heading">{heading}</h1>
 
       {/* Image */}
-      <img src={imageSrc} alt={heading} className="partner-image" loading="lazy"/>
+      <img src={imageSrc} alt={heading} className="partner-image" loading="lazy" />
 
       {/* Subheading */}
       <h2 className="partner-subheading">{subheading}</h2>
 
       {/* Description */}
       <p className="partner-description">{description}</p>
+      <div className="modern-line"></div> {/* Modern Line */}
     </div>
   );
 };
